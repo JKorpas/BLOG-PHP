@@ -11,11 +11,10 @@
 			$post_id = mysql_real_escape_string(($_GET['post']));
 			$title = htmlentities($_POST['title']);
 			$post = htmlentities($_POST['blogPost']);
-			
+	
 			if($title != "" && $post != ""){
-				$time = date("M d, Y", time());
-				$reg_query = "UPDATE posts SET 'title'='".$title."', 'post'='".$post."' where 'id'=\'".$post_id."\'";
-				
+				//$time = date("M d, Y", time());
+				$reg_query = "UPDATE `posts` SET `title`=\"".$title."\", `post`=\"".$post."\" where `id`=\"".$post_id."\"";
 				if($run_query = mysql_query($reg_query)){
 					echo "Post successful";
 				}else{
@@ -49,20 +48,21 @@
 		<div id="center">
 
 			<?php
-			
-				if(isset($_SESSION['user_id'])){
-					echo '
-					<form action="edit.php" method="POST">
-					';
-				}else{
-					echo 'You must login in order to post a blog.';
-				}
+
 				require 'db_conn.php';
 
 				session_start();
 				//	Display blog post by id
 				if(isset($_GET['post'])){
 					$post_id = mysql_real_escape_string(($_GET['post']));
+								
+					if(isset($_SESSION['user_id'])){
+						echo "
+						<form action=\"edit.php?post=".$post_id."\" method=\"POST\">
+						";
+					}else{
+						echo 'You must login in order to post a blog.';
+					}
 					
 					if ($query = mysql_query("SELECT id, username, time, title, post FROM posts WHERE id='".$post_id."'")) {
 						
@@ -80,9 +80,7 @@
 								echo "Title: <input type=\"text\" name=\"title\" value=\"".$title."\">
 								<br/>
 								<br/>
-								<textarea rows=\"25\" cols=\"85\"> ".html_entity_decode($post)."</textarea>
-								<br />
-								</form>
+								<textarea rows=\"25\" cols=\"85\" name=\"blogPost\"> ".html_entity_decode($post)."</textarea>
 								<br />";
 							}
 						}
@@ -93,6 +91,7 @@
 					echo '
 					<input type="submit" value="Submit Post">
 					</form>
+					<br/>
 					<br/>';
 				}
 
