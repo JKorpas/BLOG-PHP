@@ -52,14 +52,14 @@
 
 			<?php
 				if(isset($_SESSION['user_id'])){
-					echo '<form action="blog.php" method="GET">
+					echo '<form action="blog.php" method="POST">
 					Title: <input type="text" name="title"><br />
 					<textarea rows="25" cols="85" name="blogPost" value="" ></textarea>
 
 					<br />
 					<input type="submit" value="Submit Post">
-				</form>
-				<br />';
+					</form>
+					<br />';
 				}else{
 					echo 'You must login in order to post a blog.';
 				}
