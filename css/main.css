@@ -1,0 +1,95 @@
+header, section, footer, aside {display:block;}
+body {
+	background-image:url('../images/wild_oliva.png');background-repeat:yes;
+	}
+
+.header {
+	display: inline-block;
+	background-color: #262626;
+	color: grey;
+	text-align: center;
+	height:50px;
+	width: 100%;
+	min-width:785px;
+	border-bottom: 3px #2b2b2b solid;
+}
+
+#main {
+	background-image:url('../images/crossword.png');background-repeat:yes;
+	margin: 20px 10%;
+	border : 1px black solid;
+	-moz-box-shadow:3px 3px 4px 4px #5c5c5c;-webkit-box-shadow:3px 3px 4px 4px #5c5c5c;box-shadow:3px 3px 4px 4px #5c5c5c;
+	width:75%;
+	z-index:1;
+	min-width:785px;
+	min-height: 500px;
+}
+
+.footer {
+	background-color: #262626;
+	-moz-box-shadow:3px 3px 4px 4px #5c5c5c;-webkit-box-shadow:3px 3px 4px 4px #5c5c5c;box-shadow:3px 3px 4px 4px #5c5c5c;
+	text-align: center;
+	height: 70px;
+	padding-top: 10px;
+}
+
+.nav {
+	display: inline-block;
+	width:60%;
+	text-align: right;
+}
+
+#menuitem {
+	color:grey;padding:20px;
+	font-size:12pt;font-family:Arial;text-decoration:none;
+}
+
+#menuitem:hover {
+	color:white;
+}
+.menu {
+	
+}
+
+.post {
+	background: white;
+	padding: 5px;
+	-moz-box-shadow:3px 3px 4px 4px #5c5c5c;-webkit-box-shadow:3px 3px 4px 4px #5c5c5c;box-shadow:3px 3px 4px 4px #5c5c5c;
+	border-radius: 7px;
+}
+
+#currentPage {
+	color:white;
+	padding:20px;
+	font-size:12pt;font-family:Arial;text-decoration:none;
+}
+
+#center {position:relative;
+	top:0px;
+	margin-top:5px;
+	margin-bottom:25px;
+	padding:15px;
+	width:90%;
+	height:85%;
+}
+#pics {-moz-box-shadow:3px 3px 4px 4px #5c5c5c;-webkit-box-shadow:3px 3px 4px 4px #5c5c5c;box-shadow:3px 3px 4px 4px #5c5c5c;}
+
+.recent {
+	
+}
+
+li {
+	display:inline;
+	list-style-type:none;
+	border-left: 1px grey solid;
+}
+
+a {
+	color:#00b7ff;
+}
+center.style {
+text-align:right;
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 5%;
+}
