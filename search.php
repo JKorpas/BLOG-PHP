@@ -90,7 +90,10 @@
 										}
 									
 										$post = $post." <a href=\"read.php?post=".$id."\">Read</a>";
-										echo "<div class=\"recent\"><h4>".$title." <a href=\"profile.php?user=".$username."\">".$username."</a></h4><h5>".$time."</h5><div class=\"post\">".$post."</div><br /><br /></div>";
+										if(isset($_SESSION['user_id'])){
+											$post = $post." <a href=\"edit.php?post=".$id."\">Edit</a>";
+										}
+										echo "<div class=\"recent\"><h4>".$title." <a href=\"profile.php?user=".$username."\">".$username."</a></h4><h5>".$time."</h5><div class=\"post\">".html_entity_decode($post)."</div><br /><br /></div>";
 									}
 
 								}
